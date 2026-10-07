@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ffd6e8 0%, transparent 30%),
+        radial-gradient(circle at 90% 15%, #c9e7ff 0%, transparent 30%),
+        radial-gradient(circle at 80% 90%, #d9d0ff 0%, transparent 30%),
+        linear-gradient(135deg, #f8f7ff, #eef8ff);
+
+    color: #29243d;
+
+    padding: 30px;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+    max-width: 850px;
+
+    text-align: center;
+}
+
+
+/* Heading */
+
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7b2ff7,
+        #f107a3
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.subtitle {
+    color: #716b85;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Input card */
+
+.input-card {
+    background: rgba(255, 255, 255, 0.88);
+
+    padding: 30px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 40px rgba(91, 72, 130, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    text-align: left;
+
+    backdrop-filter: blur(10px);
+}
+
+
+label {
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #4b4263;
+
+    margin-bottom: 12px;
+}
+
+
+/* Textarea */
+
+.text-area-container {
+    position: relative;
+}
+
+
+textarea {
+    width: 100%;
+
+    height: 190px;
+
+    resize: none;
+
+    border: 2px solid #e5ddf7;
+
+    border-radius: 18px;
+
+    padding: 18px 65px 18px 18px;
+
+    font-size: 16px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: #342c4d;
+
+    background: #fcfbff;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+
+textarea::placeholder {
+    color: #aaa2ba;
+}
+
+
+textarea:focus {
+    border-color: #a56cff;
+
+    box-shadow:
+        0 0 0 4px rgba(165, 108, 255, 0.12);
+}
+
+
+/* Microphone */
+
+#micButton {
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #7b2ff7,
+        #f107a3
+    );
+
+    color: white;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(123, 47, 247, 0.3);
+
+    transition: all 0.25s ease;
+}
+
+
+#micButton:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 8px 20px rgba(241, 7, 163, 0.35);
+}
+
+
+#micButton:active {
+    transform: scale(0.95);
+}
+
+
+/* Predict button */
+
+#predictButton {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        90deg,
+        #7b2ff7,
+        #f107a3
+    );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(123, 47, 247, 0.25);
+
+    transition: all 0.25s ease;
+}
+
+
+#predictButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(241, 7, 163, 0.3);
+}
+
+
+#predictButton:active {
+    transform: translateY(0);
+}
+
+
+/* Result card */
+
+.result-card {
+    margin-top: 22px;
+
+    min-height: 140px;
+
+    padding: 25px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(246, 239, 255, 0.95)
+    );
+
+    box-shadow:
+        0 12px 30px rgba(91, 72, 130, 0.12);
+
+    border: 1px solid #eee5ff;
+}
+
+
+.result-card h2 {
+    color: #5a3d8a;
+
+    margin-bottom: 15px;
+
+    font-size: 22px;
+}
+
+
+#result {
+    color: #756b87;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* Responsive design */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .input-card {
+        padding: 20px;
+    }
+
+    textarea {
+        height: 160px;
+    }
+}
+
+/* Prediction output */
+
+.prediction-label {
+    font-size: 30px;
+    font-weight: 700;
+    color: #5a3d8a;
+}
+
+.prediction-confidence {
+    margin-bottom: 16px;
+    color: #756b87;
+}
+
+.prob-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.prob-name {
+    width: 95px;
+    text-align: left;
+    color: #4b4263;
+}
+
+.prob-track {
+    flex: 1;
+    height: 10px;
+    background: #ece5fa;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.prob-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #7b2ff7, #f107a3);
+    border-radius: 6px;
+}
+
+.prob-value {
+    width: 55px;
+    text-align: right;
+    color: #756b87;
+}
+
+.support-box {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff1f4;
+    border: 1px solid #ffc9d4;
+    color: #8a2340;
+    text-align: left;
+}
+
+.disclaimer {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #968da8;
+}

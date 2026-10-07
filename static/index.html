@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mental Health Text Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Mental Health Text Analysis</h1>
+
+        <p class="subtitle">
+            Express how you are feeling by typing or speaking.
+        </p>
+
+        <div class="input-card">
+
+            <label for="userText">Enter your text</label>
+
+            <div class="text-area-container">
+
+                <textarea
+                    id="userText"
+                    placeholder="Type your thoughts here or click the microphone to speak..."
+                ></textarea>
+
+                <button
+                    id="micButton"
+                    type="button"
+                    title="Voice input">
+                    🎤
+                </button>
+
+            </div>
+
+            <button id="predictButton" type="button">
+                Predict
+            </button>
+
+        </div>
+
+        <div class="result-card">
+
+            <h2>Prediction Result</h2>
+
+            <p id="result">
+                Your result will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
